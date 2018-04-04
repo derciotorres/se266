@@ -1,25 +1,28 @@
 <?php
 require_once("db.php");
-require_once("people.php");
+require_once("corp.php");
 $action = $_REQUEST['action'];
-$fName = $_POST['fName'];
-$lName = $_POST['lName'];
-$age = $_POST['age'];
+$corp = $_POST['corp'];
+$incorp_dt = $_POST['incorp_dt'];
+$email = $_POST['email'];
+$zipcode = $_POST['zipcode'];
+$owner = $_POST['owner'];
+$phone = $_POST['phone'];
 switch ($action){
 	case "Add":
-		include_once("personForm.php");
+		include_once("corpForm.php");
 		break;
 	case "Save":
-		savePerson($db, $fName, $lName, $age);
+		savePerson($db, $corp, $incorp_dt, $email, $zipcode, $owner, $phone);
 		// get all the rows
-		$people = getRows();
+		$corp = getRows();
 		// display the rows
 		
-		include_once("peopleTable.php");
+		include_once("corpTable.php");
 		break;
 	default:
 		// get all the rows
-		$people = getRows();
+		$corp = getRows();
 		// display the rows
-		include_once("peopleTable.php");
+		include_once("corpTable.php");
 }
