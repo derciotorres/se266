@@ -9,7 +9,7 @@
         ?>
 
         <tr><br>
-            <td id="corpNameTD">
+            <td>
                 <?php
                     echo $corporation["corp"];
                 ?>
@@ -24,7 +24,7 @@
         <br />
 </center>
 		<center>
-        <a href="?action=Add2">Add New Corporation</a>
+        <a href="?action=Add2">create</a>
         </center>
 
 
