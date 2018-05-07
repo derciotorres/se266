@@ -14,12 +14,11 @@
     <!--creates a drop down list-->
     <select name="siteSelectList">
         <!---default option-->
-        <option selected="selected">Choose an option</option>
+        <option selected="selected">pick a website
         <?php
             foreach($results as $result) {
                 ?>
-                <!--lists every site in the sites table, sets the option as the
-                default option if siteSelectList is equal to the option's site_id--->
+                <!--lists every site in the sites table-->
                 <option id="listoption" <?php
                     if($_GET['siteSelectList'] == $result['site_id']){
                         echo 'selected="true"';
