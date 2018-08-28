@@ -1,0 +1,152 @@
+﻿
+
+
+.wrapper{
+    width:70%;
+	padding:10px;
+	margin:auto;
+	border: 2px solid #ffd800;
+  background:linear-gradient(135deg, #8e9eab, #eef2f3);
+  background-color:#184e8e;
+  padding-bottom:120px;
+  font-family:'Source Sans Pro', sans-serif;
+  border: 2px solid #000000;
+
+}
+
+.header{
+
+    width:100%;
+	height:20%;
+	line-height:100px;
+	margin:auto; 
+	text-align:left;
+    font-size: 20px ;
+    border: 2px solid #ff00dc;
+
+
+   
+}
+
+
+.btnlocation{
+
+    float:right;
+    margin-top:20px;
+    border: 2px solid #808080;
+
+
+}
+
+
+#structure{
+   width: 100%;
+
+   background-color: lightskyblue;
+   
+  
+}
+
+#MainContent{
+  width: 50%;
+  float:left;
+ 
+  margin-left:1%;
+
+  margin-bottom:20px;
+}
+#cpMainContainer{
+   
+
+}
+
+#SideContent{
+   float:right;
+
+   width: 30%;
+   text-align: center;
+    margin-bottom:20px;
+}
+#cphSideContent{
+
+     
+   
+}
+
+
+#footer{
+text-align:center;
+clear:both;
+width:100%;
+height: 50px;
+background-color: purple;
+border:2px solid black;
+float:none;
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------Register field----------------------------------------------------------------------------*/
+/* Add padding to containers */
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: white;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+
+
+/*--------------------------------register--------------------------------------------------------*/
+
+
+
+
