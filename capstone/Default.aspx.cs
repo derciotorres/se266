@@ -31,18 +31,21 @@ for (int i=0; i < 6; i++ ) {
             {
 
                 Image2.ImageUrl = "~/img/" + temp.Photo;
+                Label2.Text = temp.Tname;
             }
 
             else if (i == 2)
             {
 
                 Image3.ImageUrl = "~/img/" + temp.Photo;
+                Label3.Text = temp.Tname;
             }
 
             else if (i == 3)
             {
 
                 Image4.ImageUrl = "~/img/" + temp.Photo;
+                Label4.Text = temp.Tname;
             }
 
 
@@ -50,12 +53,14 @@ for (int i=0; i < 6; i++ ) {
             {
 
                 Image5.ImageUrl = "~/img/" + temp.Photo;
+                Label5.Text = temp.Tname;
             }
 
             else if (i == 5)
             {
 
                 Image6.ImageUrl = "~/img/" + temp.Photo;
+                Label6.Text = temp.Tname;
             }
 
 
