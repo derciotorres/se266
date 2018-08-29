@@ -11,6 +11,9 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+
+        
 for (int i=0; i < 6; i++ ) { 
          post temp = new post();
 
@@ -18,14 +21,15 @@ for (int i=0; i < 6; i++ ) {
         reader.Read();
         temp.Photo = reader["photo"].ToString();
         temp.Tname = reader["Tname"].ToString();
-            String path = Server.MapPath("~/img/");
-        //temp.Photo2 = System.Drawing.Image.FromFile( path+temp.Photo);
+        temp.Description=reader["Description"].ToString();
+        String path = Server.MapPath("~/img/");
+
         
         
             if (i == 0)
             {
                 Image1.ImageUrl = "~/img/" + temp.Photo;
-        Label1.Text = temp.Tname;
+                Label1.Text = temp.Tname;
             }
             else if( i == 1)
             {
@@ -66,6 +70,15 @@ for (int i=0; i < 6; i++ ) {
 
 
         }
+
+
+
+    }
+
+    protected void btnopen_Click(object sender, EventArgs e)
+    {
+        String path = Server.MapPath("~/img/");
+        Response.Redirect("Display.aspx?test=" + Image6.ImageUrl = "~/img/");
 
     }
 }

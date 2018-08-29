@@ -358,8 +358,7 @@ public class post
         string strConn = GetConnected();
 
         //My SQL command string to pull up one EBook's data
-        string sqlString =
-       "SELECT * FROM postv1 WHERE User_ID = @User_ID;";
+        string sqlString ="SELECT * FROM postv1 WHERE User_ID = @User_ID ";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;

@@ -8,15 +8,15 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <asp:Image ID="Image1" Style="width: 100%" runat="server" />
+                 <asp:Imagebutton ID="Image1"  Style="width: 100%" runat="server" OnClick="btnopen_Click" />
                     <div class="caption">
                         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4"> 
                 <div class="thumbnail">
-                    <asp:Image ID="Image2"  Style="width: 100%" runat="server" />
+                    <asp:Imagebutton ID="Image2"  Style="width: 100%" runat="server" />
                     <div class="caption">
                         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                     </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <asp:Image ID="Image3"  Style="width: 100%" runat="server" />
+                    <asp:Imagebutton ID="Image3"  Style="width: 100%" runat="server" />
                     <div class="caption">
                         <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
                     </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <asp:Image ID="Image4"  Style="width: 100%" runat="server" />
+                    <asp:Imagebutton ID="Image4"  Style="width: 100%" runat="server" />
                     <div class="caption">
                         <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
                     </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <asp:Image ID="Image5"  Style="width: 100%" runat="server" />
+                    <asp:Imagebutton ID="Image5"  Style="width: 100%" runat="server" />
                     <div class="caption">
                         <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
                     </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <asp:Image ID="Image6"  Style="width: 100%" Height="70%" runat="server" />
+                    <asp:Imagebutton ID="Image6"  Style="width: 100%"  runat="server" />
                     <div class="caption">
                         <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
                     </div>
