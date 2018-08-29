@@ -67,7 +67,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphSideContent" runat="Server">
-    <div style="width: 40%; height: 100%; margin-left:100px; background: #428bca; color: #fff; line-height: 600px; text-align: center;">SKYSCRAPER</div>
+    <div style="width: 40%; height: 100%; margin-left:20px; background: #428bca; color: #fff; line-height: 600px; text-align: center;">SKYSCRAPER</div>
 
 </asp:Content>
 

@@ -293,7 +293,7 @@ public class post
     //**************************************************************************************
     //  NEW - Part one of drill-down search (Takes search params to narrow the search results
     //**************************************************************************************
-    public DataSet SearchcemeteryV1(String strTname, String strCategory)
+    public DataSet Searchpost(String strTname, String strCategory)
     {
         //Create a dataset to return filled
         DataSet ds = new DataSet();
@@ -381,7 +381,7 @@ public class post
     //Method that will delete one EBook record specified by the ID
     //It will return an Interger meant for feedback on how many 
     // records were deleted
-    public string DeleteOnecemeteryV1(int intcemetery_ID)
+    public string DeleteOnepost(int intcemetery_ID)
     {
         Int32 intRecords = 0;
         string strResult = "";
