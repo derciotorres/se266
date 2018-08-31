@@ -4,9 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
 
-    
-     
-    
        
        
             <h1>Item Page</h1>

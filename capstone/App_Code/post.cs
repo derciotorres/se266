@@ -293,7 +293,7 @@ public class post
     //**************************************************************************************
     //  NEW - Part one of drill-down search (Takes search params to narrow the search results
     //**************************************************************************************
-    public DataSet Searchpost(String strTname, String strCategory)
+    public DataSet Searchpost(String strTname)
     {
         //Create a dataset to return filled
         DataSet ds = new DataSet();
@@ -304,7 +304,7 @@ public class post
 
 
         //Write a Select Statement to perform Search
-        String strSQL = "SELECT user_ID, Tname, category FROM post WHERE 0=0";
+        String strSQL = "SELECT user_ID, Tname FROM Postv1 WHERE 0=0";
 
         //If the First/Last Name is filled in include it as search criteria
         if (strTname.Length > 0)
@@ -313,11 +313,7 @@ public class post
             strSQL += " AND Tname LIKE @Tname";
             comm.Parameters.AddWithValue("@Tname", "%" + strTname + "%");
         }
-        if (strCategory.Length > 0)
-        {
-            strSQL += " AND Category LIKE @Category";
-            comm.Parameters.AddWithValue("@Category", "%" + strCategory + "%");
-        }
+
 
 
         //Create DB tools and Configure
@@ -358,7 +354,7 @@ public class post
         string strConn = GetConnected();
 
         //My SQL command string to pull up one EBook's data
-        string sqlString ="SELECT * FROM postv1 WHERE User_ID = @User_ID ";
+        string sqlString = "SELECT * FROM postv1 WHERE User_ID = @User_ID";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;
@@ -367,12 +363,60 @@ public class post
         comm.Connection = conn;
         comm.CommandText = sqlString;
         comm.Parameters.AddWithValue("@User_ID", intuser_ID);
+      
+            //Open the DataBase Connection and Yell our SQL Command
+            conn.Open();
+        
+        return comm.ExecuteReader();
+        
 
-        //Open the DataBase Connection and Yell our SQL Command
-        conn.Open();
+    }
 
-        //Return some form of feedback
-        return comm.ExecuteReader();   //Return the dataset to be used by others (the calling form)
+    public string getcount(int intcount_ID)
+    {
+        Int32 intRecords = 0;
+        string strResult = "";
+
+        //Create and Initialize the DB Tools we need
+        SqlConnection conn = new SqlConnection();
+        SqlCommand comm = new SqlCommand();
+
+        //My Connection String
+        string strConn = GetConnected();
+
+        //My SQL command string to pull up one EBook's data
+        string sqlString =
+       "SELECT COUNT(user_ID) FROM postv1;";
+
+        //Tell the connection object the who, what, where, how
+        conn.ConnectionString = strConn;
+
+        //Give the command object info it needs
+        comm.Connection = conn;
+        comm.CommandText = sqlString;
+        comm.Parameters.AddWithValue("@User_ID", intcount_ID);
+
+        try
+        {
+            //Open the connection
+            conn.Open();
+
+            //Run the Delete and store the number of records effected
+            intRecords = comm.ExecuteNonQuery();
+            strResult = intRecords.ToString() + " Number of records";
+        }
+        catch (Exception err)
+        {
+            strResult = "ERROR: " + err.Message;                //Set feedback to state there was an error & error info
+        }
+        finally
+        {
+            //close the connection
+            conn.Close();
+        }
+
+        return strResult;
+
 
     }
 
@@ -427,6 +471,8 @@ public class post
 
 
     }
+
+   
 
 
 

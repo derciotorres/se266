@@ -10,9 +10,11 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!string.IsNullOrEmpty(Request.QueryString["test"]))
+        if (!string.IsNullOrEmpty((string)Session["test"]))
         {
-            Image1.ImageUrl = Request.QueryString["test"];
+            Image1.ImageUrl = (string)Session["test"];
+            Label1.Text = (string)Session["test1"];
+            Label2.Text = (string)Session["test2"];
         }
         else
         {

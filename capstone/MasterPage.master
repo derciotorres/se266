@@ -26,21 +26,17 @@
             <a href="Default.aspx" id="BtnSave" runat="server">
                 <img src="img/takeitaway.png" /></a>
 
-
-
-
-
-
-            <!--<input class="form-control" type="search" placeholder="Search" aria-label="Search" />-->
-
             
             <p class="btnlocation">
+                 
                 <a id="btnlog" class="btn btn-default action-button" data-toggle="modal" data-target="#popUpWindow" runat="server">login</a>
                 <a href="Register.aspx" id="btnsign" class="btn btn-default action-button" runat="server">Sign Up</a>
                 <a href="Form.aspx" id="btndonate" class="btn btn-default action-button" runat="server">Donate</a>
                 <a href="AboutUs.aspx" id="btnabout" class="btn btn-default action-button" runat="server">about us</a>
                 <asp:Button ID="btnLogout" Class=" btn btn-default action-button" runat="server" Text="Log Out"  onclick="btnLogout_Click" />
-            </p>
+                 <input type="text" runat="server" />
+                  </p>
+          
 
 
             <asp:ContentPlaceHolder ID="head" runat="server">
@@ -100,12 +96,9 @@
                     <asp:ContentPlaceHolder ID="cphSideContent" runat="server">
                       </asp:ContentPlaceHolder>
                     <!-- clock widget start -->
-     
-                    
+                     
             </div>
             </div>
-
-
 
 
        <!-- Footer -->
