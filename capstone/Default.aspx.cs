@@ -13,7 +13,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
    {
-        SqlConnection con = new SqlConnection("Server=sql.neit.edu,4500;Database=se265_dercio;User Id=dercio;Password=neit2018;");
+       /* SqlConnection con = new SqlConnection("Server=sql.neit.edu,4500;Database=se265_dercio;User Id=dercio;Password=neit2018;");
         SqlCommand cmd;
         string sql = "SELECT COUNT(user_ID)FROM postv1";
         try
@@ -41,7 +41,7 @@ public partial class _Default : System.Web.UI.Page
         }
 
 
-
+    */
 
 
         for (int i = 0; i < 6; i++ ) { 
@@ -52,35 +52,38 @@ public partial class _Default : System.Web.UI.Page
         temp.Photo = reader["photo"].ToString();
         temp.Tname = reader["Tname"].ToString();
         temp.Description = reader["Description"].ToString();
-            String path = Server.MapPath("~/img/");
+        String path = Server.MapPath("~/img/");
 
         
         
             if (i == 5)
             {
                 Image1.ImageUrl = "~/img/" + temp.Photo;
-                Label1.Text = temp.Tname;
-                Label7.Text = temp.Description;       
+                lblTname1.Text = temp.Tname;
+                lblDescription1.Text = temp.Description;       
             }
             else if( i == 4)
             {
 
                 Image2.ImageUrl = "~/img/" + temp.Photo;
-                Label2.Text = temp.Tname;
+                lblTname2.Text = temp.Tname;
+                lblDescription2.Text = temp.Description;
             }
 
             else if (i == 3)
             {
 
                 Image3.ImageUrl = "~/img/" + temp.Photo;
-                Label3.Text = temp.Tname;
+                lblTname3.Text = temp.Tname;
+                lblDescription3.Text = temp.Description;
             }
 
             else if (i == 2)
             {
 
                 Image4.ImageUrl = "~/img/" + temp.Photo;
-                Label4.Text = temp.Tname;
+                lblTname4.Text = temp.Tname;
+                lblDescription4.Text = temp.Description;
             }
 
 
@@ -88,15 +91,16 @@ public partial class _Default : System.Web.UI.Page
             {
 
                 Image5.ImageUrl = "~/img/" + temp.Photo;
-                Label5.Text = temp.Tname;
-                Label8.Text = temp.Description;
+                lblTname5.Text = temp.Tname;
+                lblDescription5.Text = temp.Description;
             }
 
             else if (i == 0)
             {
 
                 Image6.ImageUrl = "~/img/" + temp.Photo;
-                Label6.Text = temp.Tname;
+                lblTname6.Text = temp.Tname;
+                lblDescription6.Text = temp.Description;
             }
 
 
@@ -111,21 +115,72 @@ public partial class _Default : System.Web.UI.Page
     {
 
 
-        Session["test"] = Image1.ImageUrl;
-        Session["test1"] = Label1.Text;
-        Session["test2"] = Label7.Text;
+        Session["Image"] = Image1.ImageUrl;
+        Session["PorductName"] = lblTname1.Text;
+        Session["Description"] = lblDescription1.Text;
         Response.Redirect("Display.aspx");
 
 
     }
 
+    protected void btnopen2_Click(object sender, EventArgs e)
+    {
+
+
+        Session["Image"] = Image2.ImageUrl;
+        Session["PorductName"] = lblTname2.Text;
+        Session["Description"] = lblDescription2.Text;
+        Response.Redirect("Display.aspx");
+
+
+    }
+
+    protected void btnopen3_Click(object sender, EventArgs e)
+    {
+
+
+        Session["Image"] = Image3.ImageUrl;
+        Session["PorductName"] = lblTname3.Text;
+        Session["Description"] = lblDescription3.Text;
+        Response.Redirect("Display.aspx");
+
+
+    }
+
+    protected void btnopen4_Click(object sender, EventArgs e)
+    {
+
+
+        Session["Image"] = Image4.ImageUrl;
+        Session["PorductName"] = lblTname4.Text;
+        Session["Description"] = lblDescription4.Text;
+        Response.Redirect("Display.aspx");
+
+
+    }
+
+
+
     protected void btnopen5_Click(object sender, EventArgs e)
     {
 
 
-        Session["test"] = Image5.ImageUrl;
-        Session["test1"] = Label5.Text;
-        Session["test2"] = Label8.Text;
+        Session["Image"] = Image5.ImageUrl;
+        Session["PorductName"] = lblTname5.Text;
+        Session["Description"] = lblDescription5.Text;
+        Response.Redirect("Display.aspx");
+
+
+    }
+
+
+    protected void btnopen6_Click(object sender, EventArgs e)
+    {
+
+
+        Session["Image"] = Image6.ImageUrl;
+        Session["PorductName"] = lblTname6.Text;
+        Session["Description"] = lblDescription6.Text;
         Response.Redirect("Display.aspx");
 
 
