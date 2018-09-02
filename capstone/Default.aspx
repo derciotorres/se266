@@ -5,17 +5,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
 
 
+       
         <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail">
                  <asp:Imagebutton ID="Image1"  Style="width: 100%" runat="server" OnClick="btnopen1_Click " />
                     <div class="caption">
                         <asp:Label ID="lblTname1" runat="server" Text="Label"></asp:Label>
-<<<<<<< HEAD
                         <asp:Label ID="description1" runat="server" Text="Label"></asp:Label>
-=======
-                        <asp:Label ID="lblDescription1" runat="server" Text="Label"></asp:Label>
->>>>>>> layout
                         <asp:Label ID="lblRows" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="lblRows2" runat="server" Text="Label"></asp:Label>
 
@@ -26,45 +23,26 @@
                 <div class="thumbnail">
                     <asp:Imagebutton ID="Image2"  Style="width: 100%" runat="server"  OnClick="btnopen2_Click "  />
                     <div class="caption">
-<<<<<<< HEAD
                          <asp:Label ID="lblTname2" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description2" runat="server" Text="Label"></asp:Label>
-=======
-                        <asp:Label ID="lblTname2" runat="server" Text="Label"></asp:Label>
-                        <asp:Label ID="lblDescription2" runat="server" Text="Label"></asp:Label>
->>>>>>> layout
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-<<<<<<< HEAD
                     <asp:Imagebutton ID="Image3"  Style="width: 100%" runat="server" OnClick="btnopen3_Click "  />
                     <div class="caption">
                         <asp:Label ID="lblTname3" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description3" runat="server" Text="Label"></asp:Label>
-=======
-                    <asp:Imagebutton ID="Image3"  Style="width: 100%" runat="server"  OnClick="btnopen3_Click "  />
-                    <div class="caption">
-                         <asp:Label ID="lblTname3" runat="server" Text="Label"></asp:Label>
-                        <asp:Label ID="lblDescription3" runat="server" Text="Label"></asp:Label>
->>>>>>> layout
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-<<<<<<< HEAD
                     <asp:Imagebutton ID="Image4"  Style="width: 100%" runat="server" OnClick="btnopen4_Click "  />
                     <div class="caption">
                          <asp:Label ID="lblTname4" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description4" runat="server" Text="Label"></asp:Label>
-=======
-                    <asp:Imagebutton ID="Image4"  Style="width: 100%" runat="server"  OnClick="btnopen4_Click " />
-                    <div class="caption">
-                         <asp:Label ID="lblTname4" runat="server" Text="Label"></asp:Label>
-                        <asp:Label ID="lblDescription4" runat="server" Text="Label"></asp:Label>
->>>>>>> layout
                     </div>
                 </div>
             </div>
@@ -73,27 +51,16 @@
                     <asp:Imagebutton ID="Image5"  Style="width: 100%" runat="server" OnClick="btnopen5_Click " />
                     <div class="caption">
                         <asp:Label ID="lblTname5" runat="server" Text="Label"></asp:Label>
-<<<<<<< HEAD
                         <asp:Label ID="description5" runat="server" Text="Label"></asp:Label>
-=======
-                        <asp:Label ID="lblDescription5" runat="server" Text="Label"></asp:Label>
->>>>>>> layout
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-<<<<<<< HEAD
                     <asp:Imagebutton ID="Image6"  Style="width: 100%"  runat="server" OnClick="btnopen6_Click "   />
                     <div class="caption">
                          <asp:Label ID="lblTname6" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description6" runat="server" Text="Label"></asp:Label>
-=======
-                    <asp:Imagebutton ID="Image6"  Style="width: 100%"  runat="server"  OnClick="btnopen6_Click "  />
-                    <div class="caption">
-                       <asp:Label ID="lblTname6" runat="server" Text="Label"></asp:Label>
-                        <asp:Label ID="lblDescription6" runat="server" Text="Label"></asp:Label>
->>>>>>> layout
                     </div>
                 </div>
             </div>

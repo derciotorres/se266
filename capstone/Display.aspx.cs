@@ -10,16 +10,6 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-<<<<<<< HEAD
-=======
-      
-            Image1.ImageUrl = (string)Session["Image"];
-            Label1.Text = (string)Session["PorductName"];
-            Label2.Text = (string)Session["Description"];
-        
-       
->>>>>>> layout
-
         Image1.ImageUrl = (string)Session["image"];
         Label1.Text = (string)Session["tname"];
         Label2.Text = (string)Session["Description"];
