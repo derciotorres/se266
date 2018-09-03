@@ -83,6 +83,21 @@
    
 }
 
+.picleft{
+width:50%;
+float:left;
+border:2px solid black;
+
+}
+
+
+.picright{
+    float:right;
+    width:50%;
+    border:2px solid red;
+
+}
+
 
 #footer{
 text-align:center;
@@ -104,15 +119,22 @@ font-size:400%;
 .lbl2{
 
 
-font-size:300%;
+font-size:150%;
 
 }
 
 .image2{
-
+    width:100%;
  border-radius: 8px;
 
 }
+.barslong{
+    width:100%;
+    
+
+
+}
+
 
 
 
@@ -147,3 +169,23 @@ a {
 /*--------------------------------register--------------------------------------------------------*/
 
 
+input[type=text], select, textarea {
+ 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    resize: vertical;
+}
+
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    width: 80%;
+    border-radius: 5px;
+    padding: 20px;
+}
