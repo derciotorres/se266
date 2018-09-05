@@ -124,9 +124,15 @@ public class post
 
         set
         {
+            if (ValidationLibrary.FilledIn(value))
+            {
+                town = value;
+            }
+            else
+            {
 
-            town = value;
-
+                feedback += "\nERROR: You must fill in your Town ";
+            }
         }
     }//end town
 
@@ -145,7 +151,7 @@ public class post
             else
             {
 
-                feedback += "\nERROR: You must fill in your relationship ";
+                feedback += "\nERROR: You must fill in your Address ";
             }
 
 
@@ -162,8 +168,15 @@ public class post
         }
         set
         {
-            zip = value;
+            if (ValidationLibrary.ZipCode(value))
+            {
+                zip = value;
+            }
+            else
+            {
 
+                feedback += "\nERROR: You must fill with a correct Zipcode ";
+            }
 
         }
     }//zip close
@@ -177,8 +190,15 @@ public class post
         }
         set
         {
-            fnumber = value;
+            if (ValidationLibrary.IsValidPhone(value))
+            {
+                fnumber = value;
+            }
+            else
+            {
 
+                feedback += "\nERROR: You must fill with a correct Phone Number";
+            }
 
         }
     }//Fnumber close
@@ -191,8 +211,15 @@ public class post
         }
         set
         {
-            email = value;
+            if (ValidationLibrary.emailIsValid(value))
+            {
+                email = value;
+            }
+            else
+            {
 
+                feedback += "\nERROR: You must fill with an valid email address";
+            }
 
         }
     }//email close
@@ -251,7 +278,7 @@ public class post
 
 
 
-            string strSQL = "INSERT INTO Postv1 (Tname, Category, Description, Town, Address, Zip, Fnumber, Email, Photo) VALUES (@Tname, @Category, @Description, @Town, @Address, @Zip, @Fnumber, @Email, @photo)";
+            string strSQL = "INSERT INTO Postv1 (Tname, Category, Description, Town, Address, Zip, Fnumber, Email, Photo) VALUES (@Tname, @Category, @Description, @Town, @Address, @Zip, @Fnumber, @Email, @Photo)";
             // calling out the command
             SqlCommand comm = new SqlCommand();
             comm.CommandText = strSQL;  //Commander knows what to say
@@ -354,7 +381,7 @@ public class post
         string strConn = GetConnected();
 
         //My SQL command string to pull up one EBook's data
-        string sqlString = "SELECT * FROM postv1 WHERE User_ID = @User_ID";
+        string sqlString = "SELECT * FROM postv1 WHERE User_ID = @User_ID ";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;
@@ -371,6 +398,36 @@ public class post
         
 
     }
+
+    public  SqlDataReader Findbottom6()
+    {
+        //Create and Initialize the DB Tools we need
+        SqlConnection conn = new SqlConnection();
+        SqlCommand comm = new SqlCommand();
+
+        //My Connection String
+        string strConn = GetConnected();
+
+        //My SQL command string to pull up one EBook's data
+        string sqlString = "SELECT TOP (6) User_ID,Tname,Category,Description,Email, photo  from Postv1 order by User_ID DESC ";
+
+        //Tell the connection object the who, what, where, how
+        conn.ConnectionString = strConn;
+
+        //Give the command object info it needs
+        comm.Connection = conn;
+        comm.CommandText = sqlString;
+       
+
+        //Open the DataBase Connection and Yell our SQL Command
+        conn.Open();
+
+        return comm.ExecuteReader();
+
+
+    }
+
+
 
     public string getcount(int intcount_ID)
     {
@@ -424,7 +481,7 @@ public class post
     //Method that will delete one EBook record specified by the ID
     //It will return an Interger meant for feedback on how many 
     // records were deleted
-    public string DeleteOnepost(int intcemetery_ID)
+    public string DeleteOnepost(int intuser_ID)
     {
         Int32 intRecords = 0;
         string strResult = "";
@@ -438,7 +495,7 @@ public class post
 
         //My SQL command string to pull up one EBook's data
         string sqlString =
-       "DELETE FROM cemeteryV1 WHERE cemetery_ID = @cemetery_ID;";
+       "DELETE FROM postV1 WHERE user_ID = @user_ID;";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;
@@ -446,7 +503,7 @@ public class post
         //Give the command object info it needs
         comm.Connection = conn;
         comm.CommandText = sqlString;
-        comm.Parameters.AddWithValue("@cemetery_ID", intcemetery_ID);
+        comm.Parameters.AddWithValue("@user_ID", intuser_ID);
 
         try
         {
@@ -487,7 +544,7 @@ public class post
         string strResult = "";
 
         //Create SQL command string
-        string strSQL = "UPDATE post SET Tname=@Tname, Category=@Category, Description=@Description, Photo=@Photo, Town=@Town, Address=@Address, Zip=@Zip, Fnumber=@Fnumber, Email=@Email  WHERE user_ID = @user_ID;";
+        string strSQL = "UPDATE post SET Tname=@Tname, Category=@Category, Description=@Description Town=@Town, Address=@Address, Zip=@Zip, Fnumber=@Fnumber, Email=@Email, Photo=@Photo,  WHERE user_ID = @user_ID;";
 
         // Create a connection to DB
         SqlConnection conn = new SqlConnection();
@@ -504,12 +561,12 @@ public class post
         comm.Parameters.AddWithValue("@Tname", Tname);
         comm.Parameters.AddWithValue("@Category", Category);
         comm.Parameters.AddWithValue("@Description", Description);
-        //comm.Parameters.AddWithValue("@Photo", Photo);
         comm.Parameters.AddWithValue("@Town", Town);
         comm.Parameters.AddWithValue("@Address", Address);
         comm.Parameters.AddWithValue("@Zip", Zip);
         comm.Parameters.AddWithValue("@Fnumber", Fnumber);
         comm.Parameters.AddWithValue("@Email", Email);
+        comm.Parameters.AddWithValue("@Photo", Photo);
         try
         {
             //Open the connection

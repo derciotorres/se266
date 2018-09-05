@@ -10,9 +10,11 @@
             <div class="col-md-4">
                 <div class="thumbnail">
                  <asp:Imagebutton ID="Image1"  Style="width: 100%" runat="server" OnClick="btnopen1_Click " />
+                    
                     <div class="caption">
                         <asp:Label ID="lblTname1" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description1" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="email1" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="lblRows" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="lblRows2" runat="server" Text="Label"></asp:Label>
 
@@ -25,6 +27,7 @@
                     <div class="caption">
                          <asp:Label ID="lblTname2" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description2" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="email2" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
             </div>
@@ -34,6 +37,7 @@
                     <div class="caption">
                         <asp:Label ID="lblTname3" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description3" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="email3" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
             </div>
@@ -43,6 +47,7 @@
                     <div class="caption">
                          <asp:Label ID="lblTname4" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description4" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="email4" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
             </div>
@@ -52,6 +57,7 @@
                     <div class="caption">
                         <asp:Label ID="lblTname5" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description5" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="email5" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
             </div>
@@ -61,6 +67,7 @@
                     <div class="caption">
                          <asp:Label ID="lblTname6" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description6" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="email6" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
             </div>

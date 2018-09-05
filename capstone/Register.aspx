@@ -4,54 +4,58 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
 
+    <div class="picleft">
+
+        <h1>Register</h1>
+
+        <p>Please fill in this form to create an account.</p>
+        <hr />
+
+        UserName:<asp:TextBox ID="txtUname" CssClass="barslong" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="usernameReq"
+            runat="server"
+            ControlToValidate="txtUname"
+            ErrorMessage="Username is required!"
+            SetFocusOnError="True" />
+        <br />
+
+        Password:
+        <asp:TextBox ID="txtPword" CssClass="barslong" runat="server"
+            TextMode="Password" />
+        <asp:RequiredFieldValidator ID="passwordReq"
+            runat="server"
+            ControlToValidate="txtPword"
+            ErrorMessage="Password is required!"
+            SetFocusOnError="True" Display="Dynamic" />
+
+        <br />
+        Confirm Password:<asp:TextBox ID="txtPword2" CssClass="barslong" runat="server"
+            TextMode="Password" />
+        <asp:RequiredFieldValidator ID="confirmPasswordReq"
+            runat="server"
+            ControlToValidate="txtPword2"
+            ErrorMessage="Password confirmation is required!"
+            SetFocusOnError="True"
+            Display="Dynamic" />
+        <asp:CompareValidator ID="comparePasswords"
+            runat="server"
+            ControlToCompare="txtPword"
+            ControlToValidate="txtPword2"
+            ErrorMessage="Your passwords do not match up!"
+            Display="Dynamic" />
 
 
-    <h1>Register</h1>
+        <br />
+        <br />
 
-    <p>Please fill in this form to create an account.</p>
-    <hr />
+        <asp:Button ID="btnInsert" class="btn btn-primary btn-block" runat="server" Text="insert" OnClick="btnInsert_Click" />
 
-    Email:<asp:TextBox ID="txtUname" runat="server"></asp:TextBox>
-    <br />
-    <br />
-    
+        <asp:Label ID="lblFeedback" runat="server" />
 
-    <asp:Label ID="lbl_password" runat="server" CssClass="Label" Text="Password"></asp:Label>
-    <div class="cleaner">
+        <p>Already have an account? <a data-toggle="modal" data-target="#popUpWindow">Sign in</a>.</p>
+
+
     </div>
-    <asp:TextBox ID="txtPword" runat="server" TextMode="Password" CssClass="textbox" ValidationGroup="RegisterCheck">
-    </asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPword"
-        ValidationGroup="RegisterCheck"></asp:RequiredFieldValidator>
-
-    <asp:RegularExpressionValidator ID="valPassword" runat="server" ControlToValidate="txtPword"
-        ErrorMessage="Minimum password length is 6" ValidationExpression="^([a-zA-Z0-9@#$%^&+=*]{6,30})$"
-        ValidationGroup="RegisterCheck" />
-    <div class="cleaner_h10">
-    </div>
-    <asp:Label ID="lbl_ConfirmPassword" runat="server" CssClass="Label" Text="Confirm Password"></asp:Label>
-    <div class="cleaner">
-    </div>
-    <asp:TextBox ID="radtxtConfirmPassword" runat="server" TextMode="Password" CssClass="textbox"
-        ValidationGroup="RegisterCheck">
-    </asp:TextBox>
-
-    <asp:CompareValidator ID="cmpvldPassword" runat="server" ControlToCompare="radtxtConfirmPassword"
-        ControlToValidate="txtPword" Type="String" Operator="Equal" ValidationGroup="RegisterCheck"
-        ErrorMessage="Password should match"></asp:CompareValidator>
-
-
-    <br />
-    <br />
-
-    <asp:Button ID="btnInsert" class="btn btn-primary btn-block" runat="server" Text="insert" OnClick="btnInsert_Click" />
-
-    <asp:Label ID="lblFeedback" runat="server" />
-
-    <p>Already have an account? <a data-toggle="modal" data-target="#popUpWindow">Sign in</a>.</p>
-
-
-
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphSideContent" runat="Server">

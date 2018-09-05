@@ -15,17 +15,17 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (Session["LoggedIn"] == null)
         {
-            //btnLogout.Visible = false;
-            //btndonate.Visible = false;
-           // btnsign.Visible = true;
-//btnlog.Visible = true;
+          btnLogout.Visible = false;
+         btndonate.Visible = false;
+          btnsign.Visible = true;
+          btnlog.Visible = true;
         }
         else
         {
-            //btnLogout.Enabled = true;
-           // btndonate.Visible = true;
-            //btnsign.Visible = false;
-            //btnlog.Visible = false;
+          btnLogout.Enabled = true;
+          btndonate.Visible = true;
+           btnsign.Visible = false;
+           btnlog.Visible = false;
         }
 
     }
@@ -60,9 +60,14 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         }
     }
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Search.aspx?test=" + txtsearch.Text);
+
+    }
 
 
-        protected void btnLogout_Click(object sender, EventArgs e)
+    protected void btnLogout_Click(object sender, EventArgs e)
     {
 
 

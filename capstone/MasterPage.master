@@ -35,7 +35,8 @@
                 <a href="Form.aspx" id="btndonate" class="btn btn-default action-button" runat="server">Donate</a>
                 <a href="AboutUs.aspx" id="btnabout" class="btn btn-default action-button" runat="server">about us</a>
                 <asp:Button ID="btnLogout" Class=" btn btn-default action-button" runat="server" Text="Log Out"  onclick="btnLogout_Click" />
-                 <input type="text" runat="server" />
+                <asp:TextBox ID="txtsearch" runat="server" MaxLength="30" onclick="btnSearch_Click" /><br />
+                <asp:Button ID="Search" Class=" btn btn-default action-button" runat="server" Text="Search"  onclick="btnSearch_Click" />
                   </p>
           
 

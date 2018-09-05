@@ -18,6 +18,7 @@ public class register
    
     private string uname;
     private string pword;
+    private string pword2;
     protected string feedback;// allows the outside program to see feedback
     private int user_ID;
 
@@ -78,8 +79,37 @@ public class register
         }
         set
         {
-            pword = value;
+            if (ValidationLibrary.FilledIn(value))
+            {
+                pword = value;
+            }
+            else
+            {
 
+                feedback += "\nERROR: You must fill in your title name ";
+            }
+
+        }
+
+
+    }//category CLOSE
+    public string Pword2
+    {
+        get
+        {
+            return pword2;
+        }
+        set
+        {
+            if (ValidationLibrary.FilledIn(value))
+            {
+                pword2 = value;
+            }
+            else
+            {
+
+                feedback += "\nERROR: You must fill in your title name ";
+            }
         }
 
 
@@ -119,7 +149,7 @@ public class register
         
 
 
-        string strSQL = "INSERT INTO Registration (Uname, Pword) VALUES (@Uname, @Pword)";
+        string strSQL = "INSERT INTO Registration (Uname, Pword,Pword2) VALUES (@Uname, @Pword,@Pword2)";
         // calling out the command
         SqlCommand comm = new SqlCommand();
         comm.CommandText = strSQL;  //Commander knows what to say
@@ -128,7 +158,7 @@ public class register
         //Fill in the paramters (Has to be created in same sequence as they are used in SQL Statement)
         comm.Parameters.AddWithValue("@Uname", Uname);
         comm.Parameters.AddWithValue("@Pword", Pword);
-   
+        comm.Parameters.AddWithValue("@Pword2", Pword2);
 
         //attempt to connect to the server
         try
@@ -363,6 +393,7 @@ public class register
     {//inicialize so that tere are no nulls  on feedback 
         uname = "";
         pword = "";
+        pword2 = "";
         feedback = "";
 
     }

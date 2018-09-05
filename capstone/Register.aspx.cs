@@ -14,21 +14,34 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnInsert_Click(object sender, EventArgs e)
     {
+        if (Page.IsValid)
+        {
+            btnInsert.Text = "Valid";
+        }
+        else
+        {
+            btnInsert.Text = "Invalid!";
+        }
+
 
         register temp = new register();
 
  
         temp.Uname = txtUname.Text;
         temp.Pword = txtPword.Text;
-
+        temp.Pword2 = txtPword2.Text;
 
         if (!temp.Feedback.Contains("ERROR:"))
         {
             lblFeedback.Text = temp.AddARecord();   //if no errors weh setting values, then perform the insertion into db
+            Response.Write("<script>alert('Sucess ');</script>");
+
+            Server.Transfer("default.aspx");
         }
         else
         {
-            lblFeedback.Text = temp.Feedback;       //else...dispay the error msg
+            lblFeedback.Text = temp.Feedback;
+            Response.Write("<script>alert('Try again ');</script>");//else...dispay the error msg
         }
 
 
