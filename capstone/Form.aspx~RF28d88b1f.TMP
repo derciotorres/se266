@@ -4,9 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
 
-    <div class="picleft2">
+    <div class="picleft">
 
-       <img src="img/download.png"  style="width: 100%; height:auto; margin-top: 10px; margin-bottom: 10px; transform: rotate(15deg)" />
+       <img src="img/donate now.jpg"  style="width: 100%; height:100px; margin-top: 10px; margin-bottom: 10px;" />
   
        <p class="lr">Title Name:</p> 
         <asp:TextBox ID="txtTname" CssClass="barslong" runat="server"></asp:TextBox>
@@ -18,7 +18,7 @@
             <asp:ListItem Text="Outside furniture"></asp:ListItem>
         </asp:DropDownList>
         <p class="lr"> Description :</p>
-        <asp:TextBox ID="txtDescription" runat="server" CssClass="barslong" TextMode="MultiLine" Rows="5" Height="217px"></asp:TextBox>
+        <asp:TextBox ID="txtDescription" runat="server" CssClass="barslong" TextMode="MultiLine" Rows="8" Height="217px"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfDescription" runat="server" ErrorMessage="Description is required" ForeColor="Red" ControlToValidate="txtDescription" />
         <p class="lr"> Photo Upload:</p>
         <asp:FileUpload ID="fileuploadimages" runat="server" Height="46px" Width="520px" />
@@ -46,13 +46,11 @@
         <asp:RegularExpressionValidator ID="revEmail" runat="server" ErrorMessage="wrong format for email"
         ControlToValidate="txtEmail" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
         </asp:RegularExpressionValidator>
-        <br />
+        <asp:Button ID="btnInsert" class="btn btn-primary btn-block" runat="server" Text="insert" OnClick="btnInsert_Click" />
 
-          <asp:Imagebutton ID="donatebtn"  ImageUrl="img/donate-button.png" style="width:100%;"   runat="server" OnClick="btnInsert_Click"  />
         <asp:Label ID="lblFeedback" runat="server" />
 
     </div>
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphSideContent" runat="Server">
 

@@ -53,7 +53,7 @@ public partial class Default2 : System.Web.UI.Page
             lblFeedback.Text = temp.AddARecord();   //if no errors weh setting values, then perform the insertion into db
             Response.Write("<script>alert('Sucess ');</script>");
 
-           // Server.Transfer("default.aspx");
+         Server.Transfer("default.aspx");
         }
             else
             {

@@ -16,11 +16,11 @@ public partial class Default2 : System.Web.UI.Page
     {
         if (Page.IsValid)
         {
-            btnInsert.Text = "Valid";
+            btnInsert.AlternateText = "Valid";
         }
         else
         {
-            btnInsert.Text = "Invalid!";
+            btnInsert.AlternateText = "Invalid!";
         }
 
 

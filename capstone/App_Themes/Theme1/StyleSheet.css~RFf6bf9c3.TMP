@@ -1,12 +1,16 @@
 ﻿
 
+
 .wrapper{
-    width:65%;
-	padding:20px;
+    width:70%;
+	padding:10px;
 	margin:auto;
-  background:#ecf3ff;
+	border: 2px solid #ffd800;
+  background:linear-gradient(135deg, #8e9eab, #eef2f3);
+  background-color:#184e8e;
+  padding-bottom:120px;
   font-family:'Source Sans Pro', sans-serif;
-  //border: 2px solid #000000;
+  border: 2px solid #000000;
 
 }
 
@@ -16,7 +20,7 @@
 	margin:auto; 
 	text-align:left;
     font-size: 20px ;
-    //border: 2px solid #ff00dc;
+    border: 2px solid #ff00dc;
     display:flex;
     align-content:center;
     align-items:center;
@@ -24,20 +28,8 @@
 }
 
 
-.lr{
-
-    margin:0 0 0 5px;
-    color: dodgerblue;;
-
-
-}
-.lr2{
-
-    margin:0 0 0 5px;
-    color: black;
-    font-size:17px;
-
-
+.search{
+   
 }
 
 
@@ -45,61 +37,31 @@
 
     float:right;
     width:70%;
-    
+    border: 2px solid #808080;
     display:flex;
     justify-content: flex-end;
     align-items:center;
     align-content:center;
 
 }
-.macacada{
-    
-   border-radius: 4px;
-   border: 2px solid #33ccff;
-   padding: 5px 10px;
-   font-size: 15px;
 
-}
-
-#donatebtn{
-    width:100%;
-
-
-}
-input[type="submit"]
-    {
-     border-radius: 4px;
-   border: 2px solid #33ccff;
-   padding: 5px 10px;
-   color: dodgerblue;
-
-
-    }
 .btnlocation input, .btnlocation{
-    margin-left:5px;   
+    margin-left:5px;    
+}
+
+#structure{
+   width: 100%;
+    margin-top:40px;
+   background-color: lightskyblue;
+   border: 2px solid #808080;
   
-}
-
-.banner{
-    width:100%;
-    //border: 2px solid #808080;
-    clear:both;
-}
-
-
-
-#structure {
-    width: 100%;
-    margin-top: 40px;
-    background-color: lightskyblue;
-   // border: 2px solid #808080;
 }
 
 
 #MainContent{
-  width: 75%;
+  width: 80%;
   float:left;
- // border: 2px solid #808080;
+  border: 2px solid #808080;
   margin-bottom:20px;
 
 }
@@ -113,7 +75,7 @@ input[type="submit"]
    width: 20%;
    text-align: center;
    margin-bottom:20px;
-  // border: 2px solid #808080;
+   border: 2px solid #808080;
 }
 #cphSideContent{
 
@@ -124,30 +86,17 @@ input[type="submit"]
 .picleft{
 width:50%;
 float:left;
-//border:2px solid black;
+border:2px solid black;
 
 }
-.picleft2{
-width:60%;
-//text-align:center;
-margin-left:250px;
-}
-
-.picleft3{
-width:40%;
-//text-align:center;
-margin-left:300px;
-}
-
 
 
 .picright{
     float:right;
     width:50%;
-    //border:2px solid red;
+    border:2px solid red;
 
 }
-
 
 
 #footer{
@@ -156,11 +105,12 @@ clear:both;
 width:100%;
 height: 50px;
 background-color: purple;
-//border:2px solid black;
+border:2px solid black;
 float:none;
 
 } 
 .lbl1{
+
 
 font-size:400%;
 
@@ -174,53 +124,19 @@ font-size:150%;
 }
 
 .image2{
-    width:400px;
-
-    border-radius: 8px;
+    width:100%;
+ border-radius: 8px;
 
 }
 .barslong{
-    font-size:20px;
     width:100%;
-    height:40px;
-    border: 2px solid #33ccff;
-
-}
-.barslong2{
-    font-size:20px;
-    width:100%;
-    height:40px;
-    border: 2px solid #99cc00;
-     border-radius: 4px;
-}
-.barslong3{
-    font-size:20px;
-    width:100%;
-    height:40px;
-    border: 2px solid orange;
-     border-radius: 4px;
-}
-.container2{
-
-    display:flex;
-    flex-wrap:wrap;
-
-}
-
-
-.pic3{
-
-  width: 100%; 
-  height: 300px;
-  border-radius: 10%;
-  margin-top:10px;
-}
-.lblpic{
-    text-align:center;
-
+    
 
 
 }
+
+
+
 
 
 
@@ -232,7 +148,7 @@ font-size:150%;
 
 /*---------------------------------------------------Register field----------------------------------------------------------------------------*/
 hr {
-  
+    border: 1px solid #f1f1f1;
     margin-bottom: 25px;
 }
 
@@ -255,11 +171,11 @@ a {
 
 input[type=text], select, textarea {
  
-
+    border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    resize: vertical;
 
+    resize: vertical;
 }
 
 
@@ -291,7 +207,7 @@ input[type=submit]:hover {
 .rounded_corners th { 
     padding: 4px 2px; 
     color: #fff; 
-    background: #00a1f2 url(grd_head.png) repeat-x top; 
+    background: #424242 url(grd_head.png) repeat-x top; 
     border-left: solid 1px #525252; 
     font-size: 2.0em; 
 }
@@ -307,14 +223,3 @@ input[type=submit]:hover {
  }   
 .rounded_corners .pgr a { color: #525252; text-decoration: none; }
 .rounded_corners .pgr a:hover { color: #525252; text-decoration: none; }
-
-
-/*--------------------------------test--------------------------------------------------------*/
-
-.jumbotron{
-    background: #ecf0f1;
-   
-}
-
-
-

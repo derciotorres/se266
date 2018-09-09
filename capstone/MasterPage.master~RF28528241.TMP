@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="assets/css/Header-Blue.css" />
 
 
 </head>
 
-<body style="background: #ecf3ff";>
+<body>
        <form id="form1" runat="server">
 
     <div class="wrapper">
@@ -30,11 +30,11 @@
             
             <p class="btnlocation">
                  
-                <a id="btnlog" class="macacada" style=" margin-right: 5px;" data-toggle="modal" data-target="#popUpWindow" runat="server">Login</a>
+                <a id="btnlog" class="macacada" style=" margin-right: 5px;" data-toggle="modal" data-target="#popUpWindow" runat="server">login</a>
                 <a href="Register.aspx" id="btnsign" class="macacada" style=" margin-right: 5px;" runat="server">Sign Up</a>
                 <a href="Form.aspx" id="btndonate" class="macacada" style=" margin-right: 5px;" runat="server">Donate</a>
-                <a href="AboutUs.aspx" id="btnabout" class="macacada" runat="server">About us</a>
-                <asp:Button ID="btnLogout" Class=" macacada" runat="server" Text="Log Out" style="background-color: #ecf3ff;"   onclick="btnLogout_Click" />
+                <a href="AboutUs.aspx" id="btnabout" class="macacada" runat="server">about us</a>
+                <asp:Button ID="btnLogout" Class=" macacada" style="background-color: #ecf3ff;" runat="server" Text="Log Out"  onclick="btnLogout_Click" />
                 <asp:TextBox ID="txtsearch" runat="server" MaxLength="30" onclick="btnSearch_Click" />
                 <asp:Button ID="Search" CssClass="macacada" runat="server" Text="Search" style="background-color: #ecf3ff;"  onclick="btnSearch_Click" />
                   </p>
@@ -53,33 +53,24 @@
                     <!-- header -->
                     <div class="modal-header">
                         <button class="btn btn-default action-button" data-dismiss="modal">&times;</button>
-                        <h3> <img src="img/login-logo-png.png" style="width:100%; height:150px;" /></h3>
+                        <h3 class="loginform">Login Form</h3>
                     </div>
                     <!-- body -->
                     <div class="modal-header">
 
                         <div class="form-group">
-                         <p class="lr2">Username:</p>     
-          <asp:TextBox ID="txtUser" runat="server" CssClass="barslong2"  MaxLength="30" /><br />
-           <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
-            runat="server"
-            ControlToValidate="txtUser"
-            ErrorMessage="UserName is required!"
-            SetFocusOnError="True" />
-           <p class="lr2">Password:</p> 
-          <asp:TextBox ID="txtPass"  type="password" CssClass="barslong2" runat="server" MaxLength="30" EnableViewState="True" /><br />
-         <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
-            runat="server"
-            ControlToValidate="txtPass"
-            ErrorMessage="Passord is required!"
-            SetFocusOnError="True" />
+                              
+            Username: <asp:TextBox ID="txtUser" runat="server" MaxLength="30" /><br />
+            <br />
+            Password: <asp:TextBox ID="txtPass" type="password" runat="server" MaxLength="30" EnableViewState="True" /><br />
+
 
                         </div>
 
                         <!-- footer -->
                         <div class="modal-footer">
+              <asp:Button ID="btnInsert" class="btn btn-primary btn-block"  runat="server" Text="login" OnClick="btnlogin_Click" />
 
- <asp:Imagebutton ID="btnInsert"  ImageUrl="img/download (1).png" style="width:50%; height:50%; margin-right: 140px;"   runat="server" OnClick="btnlogin_Click"  />
             <asp:Label ID="lblFeedback" runat="server" />
 
 
@@ -105,7 +96,9 @@
 
                 <div id="SideContent">
                     <asp:ContentPlaceHolder ID="cphSideContent" runat="server">
-      </asp:ContentPlaceHolder>
+                      </asp:ContentPlaceHolder>
+                    <!-- clock widget start -->
+                     
             </div>
             </div>
 

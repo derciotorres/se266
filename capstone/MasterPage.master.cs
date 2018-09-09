@@ -46,7 +46,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 Session["LoggedIn"] = "TRUE";
                 Response.Write("<script>alert('Welcome ');</script>");
                 //Shoot off to main page
-               
                 Server.Transfer("default.aspx");
             }
             else
@@ -62,14 +61,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
     protected void btnSearch_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Search.aspx?test=" + txtsearch.Text);
+        Response.Redirect("Search.aspx?search=" + txtsearch.Text);
 
     }
 
 
     protected void btnLogout_Click(object sender, EventArgs e)
     {
-
 
         Session.Abandon();
         Response.Redirect("default.aspx");

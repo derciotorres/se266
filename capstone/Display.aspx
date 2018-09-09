@@ -5,14 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
     <div class="picleft">
 
-        <asp:Label ID="lblpost_ID" runat="server" /><br />
-    <asp:Label ID="lblTname1" runat="server" CssClass="lbl1" Text="Label"  Width="508px"  ></asp:Label>
-        
+        <asp:Label ID="lblpost_ID" Visible="false" runat="server" /><br />
+    <asp:Label ID="lblTname1" runat="server" CssClass="lbl1" Text="Label"   ></asp:Label>
     <br />
     <asp:Image ID="Image1" CssClass="image2" runat="server" />
     <br />
     <br />
-    <asp:Label ID="description1" CssClass="lbl2" runat="server" Text="Label" Width="508px" ></asp:Label>
+    <asp:Label ID="description1" CssClass="lbl2" runat="server" Text="Label" ></asp:Label>
        
     <br />
     <br />
@@ -45,5 +44,10 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphSideContent" runat="Server">
+      <div class="banner">
+
+            <img src="img/banner.jpg"  style="width: 100%; margin-top: 10px;" />
+
+        </div>
 </asp:Content>
 

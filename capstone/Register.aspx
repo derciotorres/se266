@@ -4,33 +4,30 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
 
-    <div class="picleft">
+    <div class="picleft3">
 
-        <h1>Register</h1>
+        <h1> <img src="img/contentrotator636524317775251931.png"  style="width: 90%; margin-top: 10px;" /></h1>
 
-        <p>Please fill in this form to create an account.</p>
-        <hr />
-
-        UserName:<asp:TextBox ID="txtUname" CssClass="barslong" runat="server"></asp:TextBox>
+        UserName:<asp:TextBox ID="txtUname" CssClass="barslong3" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="usernameReq"
             runat="server"
             ControlToValidate="txtUname"
             ErrorMessage="Username is required!"
             SetFocusOnError="True" />
         <br />
-
         Password:
-        <asp:TextBox ID="txtPword" CssClass="barslong" runat="server"
+        <asp:TextBox ID="txtPword" CssClass="barslong3" runat="server"
             TextMode="Password" />
+         <br />
         <asp:RequiredFieldValidator ID="passwordReq"
             runat="server"
             ControlToValidate="txtPword"
             ErrorMessage="Password is required!"
             SetFocusOnError="True" Display="Dynamic" />
-
         <br />
-        Confirm Password:<asp:TextBox ID="txtPword2" CssClass="barslong" runat="server"
+        Confirm Password:<asp:TextBox ID="txtPword2" CssClass="barslong3" runat="server"
             TextMode="Password" />
+        <br />
         <asp:RequiredFieldValidator ID="confirmPasswordReq"
             runat="server"
             ControlToValidate="txtPword2"
@@ -47,8 +44,9 @@
 
         <br />
         <br />
-
-        <asp:Button ID="btnInsert" class="btn btn-primary btn-block" runat="server" Text="insert" OnClick="btnInsert_Click" />
+        <center>
+         <asp:Imagebutton ID="btnInsert" ImageUrl="img/Register-Now-Button_b_smaller.png" style="width:80%; margin-left:20px"  runat="server" OnClick="btnInsert_Click"  />
+         </center>
 
         <asp:Label ID="lblFeedback" runat="server" />
 
@@ -59,5 +57,10 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphSideContent" runat="Server">
+      <div class="banner">
+
+            <img src="img/banner.jpg"  style="width: 100%; height:auto; margin-top: 10px;" />
+
+        </div>
 </asp:Content>
 
