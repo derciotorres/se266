@@ -26,16 +26,21 @@
 
             <a href="Default.aspx" id="BtnSave" runat="server">
                 <img src="img/takeitaway.png" /></a>
+            <div class="lbluser">
+               
 
+            </div>
+
+          
             
             <p class="btnlocation">
-                 
+                
                 <a id="btnlog" class="macacada" style=" margin-right: 5px;" data-toggle="modal" data-target="#popUpWindow" runat="server">Login</a>
                 <a href="Register.aspx" id="btnsign" class="macacada" style=" margin-right: 5px;" runat="server">Sign Up</a>
                 <a href="Form.aspx" id="btndonate" class="macacada" style=" margin-right: 5px;" runat="server">Donate</a>
                 <a href="AboutUs.aspx" id="btnabout" class="macacada" runat="server">About us</a>
                 <asp:Button ID="btnLogout" Class=" macacada" runat="server" Text="Log Out" style="background-color: #ecf3ff;"   onclick="btnLogout_Click" />
-                <asp:TextBox ID="txtsearch" runat="server" MaxLength="30" onclick="btnSearch_Click" />
+                <asp:TextBox ID="txtsearch" runat="server" MaxLength="30" style="border: 2px solid #33ccff;" onclick="btnSearch_Click" />
                 <asp:Button ID="Search" CssClass="macacada" runat="server" Text="Search" style="background-color: #ecf3ff;"  onclick="btnSearch_Click" />
                   </p>
           
@@ -60,26 +65,17 @@
 
                         <div class="form-group">
                          <p class="lr2">Username:</p>     
-          <asp:TextBox ID="txtUser" runat="server" CssClass="barslong2"  MaxLength="30" /><br />
-           <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
-            runat="server"
-            ControlToValidate="txtUser"
-            ErrorMessage="UserName is required!"
-            SetFocusOnError="True" />
+          <asp:TextBox ID="txtUser" runat="server" CssClass="barslong2"  MaxLength="30" /><br />                 
            <p class="lr2">Password:</p> 
           <asp:TextBox ID="txtPass"  type="password" CssClass="barslong2" runat="server" MaxLength="30" EnableViewState="True" /><br />
-         <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
-            runat="server"
-            ControlToValidate="txtPass"
-            ErrorMessage="Passord is required!"
-            SetFocusOnError="True" />
+
 
                         </div>
 
                         <!-- footer -->
                         <div class="modal-footer">
 
- <asp:Imagebutton ID="btnInsert"  ImageUrl="img/download (1).png" style="width:50%; height:50%; margin-right: 140px;"   runat="server" OnClick="btnlogin_Click"  />
+ <asp:Imagebutton ID="btnInsert"  ImageUrl="img/download (1).png" style="width:50%; height:auto; margin-right: 140px;"   runat="server" OnClick="btnlogin_Click"  />
             <asp:Label ID="lblFeedback" runat="server" />
 
 
@@ -111,8 +107,22 @@
 
 
        <!-- Footer -->
-        <div id="footer" style="background-image: url(Images/footer.jpg)">
-                Copyright info, main contact info
+        <div id="footer">
+            <div class="social">
+                 <a href="https://www.facebook.com/"  target="_blank" id="A1" runat="server">
+                <img src="img/Facebook.png"  style="width: 6%;" /></a>
+                 <a href="https://www.instagram.com/"  target="_blank" id="A2" runat="server">
+                <img src="img/insta.png" style="width: 6%;" /></a>
+                <a href="https://www.snapchat.com/"  target="_blank" id="A3" runat="server">
+                <img src="img/snap.png" style="width: 6%;" /></a>
+                <a href="https://twitter.com/"  target="_blank" id="A4" runat="server">
+                <img src="img/piupiu.png" style="width: 6%;" /></a>
+
+            </div>
+
+            <p class="lr3" >Dercio Torres © All Rights Reserved</p>
+
+                
             </div>
         </div>
         <!-- Footer --> 

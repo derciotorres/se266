@@ -28,7 +28,7 @@ public partial class Default2 : System.Web.UI.Page
 
             intPer_ID = Convert.ToInt32(strPer_ID);
 
-            //Fill the "temp" person's info based on ID
+            //Fill the "temp" user's info based on ID
             post temp = new post();
 
             SqlDataReader reader = temp.FindOnepost(intPer_ID);
@@ -56,7 +56,7 @@ public partial class Default2 : System.Web.UI.Page
         mail.To.Add(email.Text);
 
         mail.From = new MailAddress("test19901809@gmail.com");
-        mail.Subject = "TakeIt!";
+        mail.Subject = txtsubject.Text;
         string Body = txtmessage.Text;
         mail.Body = Body;
         SmtpClient smtp = new SmtpClient();

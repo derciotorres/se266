@@ -13,35 +13,6 @@ public partial class _Default : System.Web.UI.Page
    
     protected void Page_Load(object sender, EventArgs e)
    {
-       /*  SqlConnection con = new SqlConnection("Server=sql.neit.edu,4500;Database=se265_dercio;User Id=dercio;Password=neit2018;");
-         SqlCommand cmd;
-         string sql = "SELECT COUNT(user_ID)FROM postv1";
-         try
-         {
-             con.Open();
-
-             lblRows.Text=" Database connected ...!";
-             cmd = new SqlCommand(sql, con);
-             Int32 rows_count = Convert.ToInt32(cmd.ExecuteScalar());
-             cmd.Dispose();
-             con.Close();
-             lblRows2.Text = rows_count.ToString();
-
-         }
-         catch(Exception)
-         {
-
-             Response.Write("<script>alert('Welcome ');</script>");
-
-         }
-         finally
-         {
-
-
-         }
-        
-        int count = Int32.Parse(lblRows2.Text);
-        */
         post dummy = new post();
 
         SqlDataReader reader = dummy.Findbottom6();

@@ -11,7 +11,8 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
+
         if (Session["LoggedIn"] != null && Session["LoggedIn"].ToString() == "TRUE")
         {
             //do nothing...they are good
@@ -20,7 +21,9 @@ public partial class Default2 : System.Web.UI.Page
         {
             Response.Redirect("default.aspx");
         }
-       
+
+
+
     }
 
     protected void btnUpload_Click(object sender, EventArgs e)

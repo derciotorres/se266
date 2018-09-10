@@ -11,6 +11,7 @@
     <asp:Image ID="Image1" CssClass="image2" runat="server" />
     <br />
     <br />
+     <asp:Label ID="Label99" CssClass="lbl2" runat="server" Text="<b>Item Description: </b>" ></asp:Label><br />
     <asp:Label ID="description1" CssClass="lbl2" runat="server" Text="Label" ></asp:Label>
        
     <br />
@@ -19,26 +20,19 @@
     <br />
     </div>
     <div class="picright">
-
-
-<div class="container">
-    <br />
-      <br />
  <h3>Contact Form</h3>
 
     <asp:Label ID="email" CssClass="lbl2" runat="server" Text="Label" Visible="false" Width="508px" ></asp:Label>
     
     <label>Subject</label> 
     <asp:TextBox ID="txtsubject" runat="server" CssClass="barslong" placeholder=" "></asp:TextBox>
-   <label>Subject</label>
+   <label>Message</label>
 
-    <asp:TextBox ID="txtmessage" CssClass="barslong" runat="server" TextMode="MultiLine" placeholder="Write your message here. please leave your contact for the donor to be able to contact you"  style="height:200px"></asp:TextBox>
-
-    <asp:Button ID="Bttn_Send" class="btn btn-primary btn-block" runat="server" Text="insert" OnClick="Bttn_Send_Click" />
-
+    <asp:TextBox ID="txtmessage" CssClass="barslong" runat="server" TextMode="MultiLine" placeholder="Please write your message here! Leave the contact information that you wish to be reached by the donor."  style="height:200px"></asp:TextBox>
+         <asp:Imagebutton ID="Bttn_Send"  CssClass="macacada2" ImageUrl="img/Send-Email-Button-Transparent-PNG.png" style="width:90%;"   runat="server" OnClick="Bttn_Send_Click"  />
 </div>
 
- </div>
+
       
 
 </asp:Content>

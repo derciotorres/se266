@@ -13,16 +13,24 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
+
+      
+
         if (Session["LoggedIn"] == null)
         {
-          btnLogout.Visible = false;
+          
+            btnLogout.Visible = false;
          btndonate.Visible = false;
           btnsign.Visible = true;
           btnlog.Visible = true;
+
         }
         else
         {
-          btnLogout.Enabled = true;
+
+         
+            
+            btnLogout.Enabled = true;
           btndonate.Visible = true;
            btnsign.Visible = false;
            btnlog.Visible = false;
@@ -43,10 +51,22 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             if (dr["Pword"].ToString() == txtPass.Text)
             {
-                Session["LoggedIn"] = "TRUE";
-                Response.Write("<script>alert('Welcome ');</script>");
-                //Shoot off to main page
-                Server.Transfer("default.aspx");
+                if (txtUser.Text.Length == 0)
+                {
+                    Response.Write("<script>alert('Try Again ');</script>");
+
+                }
+                else
+                {
+                    Session["LoggedIn"] = "TRUE";
+                    Response.Write("<script>alert('Welcome ');</script>");
+               
+                    //Shoot off to main page
+                    Server.Transfer("default.aspx");
+
+                }
+
+            
             }
             else
             {
@@ -68,11 +88,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void btnLogout_Click(object sender, EventArgs e)
     {
-
+       
         Session.Abandon();
         Response.Redirect("default.aspx");
-
-
 
     }
 
