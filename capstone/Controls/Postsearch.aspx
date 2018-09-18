@@ -15,6 +15,7 @@
          <Columns>
            <asp:BoundField DataField="Tname" HeaderText="Title"  />
               <asp:HyperLinkField Text="View" DataNavigateUrlFormatString="Display2.aspx?Per_ID={0}" DataNavigateUrlFields="User_ID" />
+             <asp:HyperLinkField Text="Edit" DataNavigateUrlFormatString="Form2.aspx?Per_ID={0}" DataNavigateUrlFields="User_ID" />
         </Columns>
      </asp:GridView>
     </center>                                                       

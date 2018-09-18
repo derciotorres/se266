@@ -5,8 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
 
     <div class="picleft3">
-
-        <h1> <img src="img/contentrotator636524317775251931.png"  style="width: 90%; margin-top: 10px;" /></h1>
+        <!-- register field with some validation -->
+        <h1>
+            <img src="img/contentrotator636524317775251931.png" style="width: 90%; margin-top: 10px;" /></h1>
 
         UserName:<asp:TextBox ID="txtUname" CssClass="barslong3" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="usernameReq"
@@ -18,7 +19,7 @@
         Password:
         <asp:TextBox ID="txtPword" CssClass="barslong3" runat="server"
             TextMode="Password" />
-         <br />
+        <br />
         <asp:RequiredFieldValidator ID="passwordReq"
             runat="server"
             ControlToValidate="txtPword"
@@ -57,10 +58,10 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphSideContent" runat="Server">
-      <div class="banner">
+    <div class="banner">
 
-            <img src="img/banner.jpg"  style="width: 100%; height:auto; margin-top: 10px;" />
+        <img src="img/banner.jpg" style="width: 100%; height: auto; margin-top: 10px;" />
 
-        </div>
+    </div>
 </asp:Content>
 

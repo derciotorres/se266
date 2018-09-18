@@ -19,7 +19,7 @@
     <br />
     <br />
     </div>
-    <div class="picright">
+
 
 
 

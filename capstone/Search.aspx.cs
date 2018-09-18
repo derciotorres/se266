@@ -16,7 +16,7 @@ public partial class Search : System.Web.UI.Page
         txtTname.Text = Request.QueryString["search"];
 
         DataSet ds = temp.Searchpost(txtTname.Text);
-
+         //grabing the date from the id's on my function , in this case im ust grabbing it from the title names'
         gvpost.DataSource = ds;
         gvpost.DataMember = ds.Tables[0].TableName;
         gvpost.DataBind();

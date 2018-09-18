@@ -21,11 +21,9 @@ public partial class Controls_control1 : System.Web.UI.Page
         }
     }
 
-    protected void btnAdd_Click(object sender, EventArgs e)
+    protected void btnuser_Click(object sender, EventArgs e)
     {
-        
-        Server.Transfer("Form2.aspx");
-
+        Server.Transfer("usersearch.aspx");
     }
 
     protected void btnSearch_Click(object sender, EventArgs e)

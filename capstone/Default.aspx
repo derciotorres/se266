@@ -4,6 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
 
+    <!-- This page has holds all the pictures and the information for it on the back end  -->
+
+
       <div class="container2" style="width: 100%";">
 
         <div class="row">
@@ -13,6 +16,7 @@
                         <asp:Label ID="lblTname1" runat="server"  Text="Label"></asp:Label>
                         <asp:Label ID="description1" Visible="false" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="email1" runat="server" Visible="false" Text="Label"></asp:Label>
+                        <asp:Label ID="town1" runat="server" Visible="false" Text="Label"></asp:Label>
                     </div>
             </div>
             <div class="col-md-4 imgdiv">
@@ -21,6 +25,7 @@
                         <asp:Label ID="lblTname2" runat="server"  Text="Label"></asp:Label>
                         <asp:Label ID="description2" runat="server" Visible="false" Text="Label"></asp:Label>
                         <asp:Label ID="email2" runat="server" Visible="false" Text="Label"></asp:Label>
+                     <asp:Label ID="town2" runat="server" Visible="false" Text="Label"></asp:Label>
                     </div>
             </div>
             <div class="col-md-4 imgdiv">
@@ -29,6 +34,7 @@
                         <asp:Label ID="lblTname3" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description3" runat="server" Visible="false" Text="Label"></asp:Label>
                         <asp:Label ID="email3" runat="server" Visible="false" Text="Label"></asp:Label>
+                       <asp:Label ID="town3" runat="server" Visible="false" Text="Label"></asp:Label>
                     </div>
             </div>
         </div>
@@ -39,6 +45,7 @@
                          <asp:Label ID="lblTname4" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description4" runat="server" Visible="false" Text="Label"></asp:Label>
                         <asp:Label ID="email4" runat="server" Visible="false" Text="Label"></asp:Label>
+                       <asp:Label ID="town4" runat="server" Visible="false" Text="Label"></asp:Label>
                     </div>
             </div>
             <div class="col-md-4 imgdiv">
@@ -47,6 +54,7 @@
                         <asp:Label ID="lblTname5" runat="server" Text="Label"></asp:Label>
                         <asp:Label ID="description5" runat="server" Visible="false" Text="Label"></asp:Label>
                         <asp:Label ID="email5" runat="server" Visible="false" Text="Label"></asp:Label>
+                    <asp:Label ID="town5" runat="server" Visible="false" Text="Label"></asp:Label>
                     </div>
             </div>
             <div class="col-md-4 imgdiv">
@@ -55,6 +63,7 @@
                          <asp:Label ID="lblTname6" runat="server" text="Label"></asp:Label>
                         <asp:Label ID="description6" runat="server" Visible="false" Text="Label"></asp:Label>
                         <asp:Label ID="email6" runat="server" Visible="false" Text="Label"></asp:Label>
+                     <asp:Label ID="town6" runat="server" Visible="false" Text="Label"></asp:Label>
                     </div>
             </div>
         </div>

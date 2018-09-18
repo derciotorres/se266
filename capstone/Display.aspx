@@ -5,15 +5,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContainer" runat="Server">
     <div class="picleft">
 
-        <asp:Label ID="lblpost_ID" Visible="false" runat="server" /><br />
+    <asp:Label ID="lblpost_ID" Visible="false" runat="server" /><br />
     <asp:Label ID="lblTname1" runat="server" CssClass="lbl1" Text="Label"   ></asp:Label>
     <br />
     <asp:Image ID="Image1" CssClass="image2" runat="server" />
     <br />
     <br />
-     <asp:Label ID="Label99" CssClass="lbl2" runat="server" Text="<b>Item Description: </b>" ></asp:Label><br />
-    <asp:Label ID="description1" CssClass="lbl2" runat="server" Text="Label" ></asp:Label>
-       
+     <asp:Label ID="Label2" CssClass="lbl2" runat="server" Text="<b>Item Description: </b>" ></asp:Label><br />
+    <asp:Label ID="description1" CssClass="lbl2" runat="server" Text="Label" ></asp:Label><br />
+    <asp:Label ID="Lable3" CssClass="lbl2" runat="server" Text="<b>Town: </b>" ></asp:Label>
+    <asp:Label ID="town" CssClass="lbl2" runat="server" Text="Label" ></asp:Label>
     <br />
     <br />
     <br />

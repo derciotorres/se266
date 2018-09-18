@@ -8,13 +8,11 @@ using System.IO;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-/// <summary>
-/// Summary description for Class1
-/// </summary>
+
 public class post
 {
 
-    //My class with all my variables for my questions.
+    //My class with all my variables
    
     private string tname;
     private string category;
@@ -298,7 +296,7 @@ public class post
             //attempt to connect to the server
             try
             {
-                Conn.Open();                                        //Open connection to DB - Think of dialing a friend on phone
+                Conn.Open();                                        //Open connection to DB 
                 int intRecs = comm.ExecuteNonQuery();
                 strResult = "SUCCESS: Inserted " + intRecs + " records.";       //Report that we made the connection and added a record
                 Conn.Close();                                      //Hanging up after phone call
@@ -317,9 +315,7 @@ public class post
         }
     
 
-    //**************************************************************************************
-    //  NEW - Part one of drill-down search (Takes search params to narrow the search results
-    //**************************************************************************************
+
     public DataSet Searchpost(String strTname)
     {
         //Create a dataset to return filled
@@ -344,7 +340,6 @@ public class post
 
 
         //Create DB tools and Configure
-        //*********************************************************************************************
         SqlConnection conn = new SqlConnection();
         //Create the who, what where of the DB
         string strConn = @GetConnected();
@@ -362,7 +357,7 @@ public class post
 
         //Get Data
         conn.Open();                //Open the connection 
-        da.Fill(ds, "post_Temp");     //Fill the dataset with results from database and call it "personV2_Temp"
+        da.Fill(ds, "post_Temp");     //Fill the dataset with results from database and call it "post_Temp"
         conn.Close();               //Close the connection 
 
         //Return the data
@@ -380,8 +375,8 @@ public class post
         //My Connection String
         string strConn = GetConnected();
 
-        //My SQL command string to pull up one EBook's data
-        string sqlString = "SELECT * FROM postv1 WHERE User_ID = @User_ID ";
+        //My SQL command string to pull up one post data
+        string sqlString = "SELECT * FROM Postv1 WHERE User_ID = @User_ID ";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;
@@ -401,6 +396,7 @@ public class post
 
     public  SqlDataReader Findbottom6()
     {
+        //function to give me the top 6 in descent order for my main page
         //Create and Initialize the DB Tools we need
         SqlConnection conn = new SqlConnection();
         SqlCommand comm = new SqlCommand();
@@ -408,8 +404,8 @@ public class post
         //My Connection String
         string strConn = GetConnected();
 
-        //My SQL command string to pull up one EBook's data
-        string sqlString = "SELECT TOP (6) User_ID,Tname,Category,Description,Email, photo  from Postv1 order by User_ID DESC ";
+        //My SQL command string to pull up one post data
+        string sqlString = "SELECT TOP (6) User_ID,Tname,Category,Description,Email,Town,photo  from Postv1 order by User_ID DESC ";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;
@@ -478,9 +474,7 @@ public class post
     }
 
 
-    //Method that will delete one EBook record specified by the ID
-    //It will return an Interger meant for feedback on how many 
-    // records were deleted
+   
     public string DeleteOnepost(int intuser_ID)
     {
         Int32 intRecords = 0;
@@ -493,9 +487,9 @@ public class post
         //My Connection String
         string strConn = GetConnected();
 
-        //My SQL command string to pull up one EBook's data
+        //My SQL command string to pull up post data
         string sqlString =
-       "DELETE FROM postV1 WHERE user_ID = @user_ID;";
+       "DELETE FROM postV1 WHERE User_ID = @User_ID;";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;
@@ -534,17 +528,14 @@ public class post
 
 
 
-    /// <summary>
-    /// NEW - Method to Update a Record in the DB
-    /// </summary>
-    /// <returns></returns>
+
     public string UpdateARecord()
     {
         Int32 intRecords = 0;
         string strResult = "";
 
         //Create SQL command string
-        string strSQL = "UPDATE post SET Tname=@Tname, Category=@Category, Description=@Description Town=@Town, Address=@Address, Zip=@Zip, Fnumber=@Fnumber, Email=@Email, Photo=@Photo,  WHERE user_ID = @user_ID;";
+        string strSQL = "UPDATE postV1 SET Tname=@Tname, Category=@Category, Description=@Description, Town=@Town, Address=@Address, Zip=@Zip, Fnumber=@Fnumber, Email=@Email, Photo=@Photo  WHERE User_ID = @User_ID;";
 
         // Create a connection to DB
         SqlConnection conn = new SqlConnection();
@@ -552,7 +543,7 @@ public class post
         string strConn = GetConnected();
         conn.ConnectionString = strConn;
 
-        // Bark out our command
+        //  command
         SqlCommand comm = new SqlCommand();
         comm.CommandText = strSQL;  //Commander knows what to say
         comm.Connection = conn;     //Where's the phone?  Here it is
@@ -567,6 +558,7 @@ public class post
         comm.Parameters.AddWithValue("@Fnumber", Fnumber);
         comm.Parameters.AddWithValue("@Email", Email);
         comm.Parameters.AddWithValue("@Photo", Photo);
+        comm.Parameters.AddWithValue("@user_ID", user_ID);
         try
         {
             //Open the connection
@@ -601,7 +593,7 @@ public class post
     }
 
     public post()
-    {//inicialize so that tere are no nulls  on feedback 
+    {//inicialize so that there are no nulls  on feedback 
         tname = "";
         category = "";
         description = "";

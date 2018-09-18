@@ -12,17 +12,19 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        // this are the fields i redirected from the default page
         Image1.ImageUrl = (string)Session["image"];
         lblTname1.Text = (string)Session["tname"];
         description1.Text = (string)Session["Description"];
-       email.Text = (string)Session["Email"];
+        email.Text = (string)Session["Email"];
+        town.Text = (string)Session["Town"];
 
         string strPer_ID = "";
         int intPer_ID = 0;
         //Does Per_ID Exist?
         if ((!IsPostBack) && Request.QueryString["Per_ID"] != null)
         {
-            //If so...Gather Person's ID and Fill Form
+            //If so...Gather post ID and Fill Form
             strPer_ID = Request.QueryString["Per_ID"].ToString();
             lblpost_ID.Text = strPer_ID;
 
@@ -39,19 +41,20 @@ public partial class Default2 : System.Web.UI.Page
             temp.Tname = reader["Tname"].ToString();
             temp.Description = reader["Description"].ToString();
             temp.Email = reader["Email"].ToString();
+            temp.Town = reader["Town"].ToString();
             String path = Server.MapPath("~/img/");
 
              Image1.ImageUrl = "~/img/" + temp.Photo;
              lblTname1.Text = temp.Tname;
              description1.Text = temp.Description;
-
+             town.Text = temp.Town;
         }
 
     
     }
     public void SendMail()
     {
-      
+        //MailMessage is the main class for sending mail, this is the part of the System.Net.Mail namespace.
         MailMessage mail = new MailMessage();
         mail.To.Add(email.Text);
 
@@ -60,8 +63,9 @@ public partial class Default2 : System.Web.UI.Page
         string Body = txtmessage.Text;
         mail.Body = Body;
         SmtpClient smtp = new SmtpClient();
+        //only works with gmail
         smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
-        smtp.Port = 587;
+        smtp.Port = 587;//port used for  Gmail
         smtp.UseDefaultCredentials = false;
         smtp.Credentials = new System.Net.NetworkCredential
         ("test19901809@gmail.com", "001425990");

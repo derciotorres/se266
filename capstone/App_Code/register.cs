@@ -70,7 +70,7 @@ public class register
 
         }
 
-    }//end tname
+    }//end Uname
     public string Pword
     {
         get
@@ -92,7 +92,7 @@ public class register
         }
 
 
-    }//category CLOSE
+    }//Pword CLOSE
     public string Pword2
     {
         get
@@ -139,7 +139,7 @@ public class register
 
             //Init string var
             string strResult = "";
-       // byte[] imageData = ReadFile(txtphoto.Text);
+
 
         //Make a connection object
         SqlConnection Conn = new SqlConnection();
@@ -149,7 +149,7 @@ public class register
         
 
 
-        string strSQL = "INSERT INTO Registration (Uname, Pword,Pword2) VALUES (@Uname, @Pword,@Pword2)";
+        string strSQL = "INSERT INTO Registration (Uname, Pword,Pword2) VALUES (@Uname, @Pword, @Pword2)";
         // calling out the command
         SqlCommand comm = new SqlCommand();
         comm.CommandText = strSQL;  //Commander knows what to say
@@ -163,10 +163,10 @@ public class register
         //attempt to connect to the server
         try
         {
-            Conn.Open();                                        //Open connection to DB - Think of dialing a friend on phone
+            Conn.Open();                                        //Open connection to DB
             int intRecs = comm.ExecuteNonQuery();
             strResult = "SUCCESS: Inserted " + intRecs + " records.";       //Report that we made the connection and added a record
-            Conn.Close();                                      //Hanging up after phone call
+            Conn.Close();                                    
         }
         catch (Exception err)                                   //If we got here, there was a problem connecting to DB
         {
@@ -180,11 +180,9 @@ public class register
         //Return resulting feedback string
         return strResult;
     }
-    /*
-    //**************************************************************************************
-    //  NEW - Part one of drill-down search (Takes search params to narrow the search results
-    //**************************************************************************************
-    public DataSet SearchcemeteryV1(String strTname, String strCategory)
+    
+  
+    public DataSet SearchRegister(String strUname)
     {
         //Create a dataset to return filled
         DataSet ds = new DataSet();
@@ -195,24 +193,20 @@ public class register
 
 
         //Write a Select Statement to perform Search
-        String strSQL = "SELECT user_ID, Tname, category FROM post WHERE 0=0";
+        String strSQL = "SELECT user_ID, Uname FROM Registration WHERE 0=0";
 
-        //If the First/Last Name is filled in include it as search criteria
-        if (strTname.Length > 0)
+        //If Uname is filled in include it as search criteria
+        if (strUname.Length > 0)
         {
             // % sign it means i dont care whats coming before and after
-            strSQL += " AND Tname LIKE @Tname";
-            comm.Parameters.AddWithValue("@Tname", "%" + strTname + "%");
+            strSQL += " AND Uname LIKE @Uname";
+            comm.Parameters.AddWithValue("@Uname", "%" + strUname + "%");
         }
-        if (strCategory.Length > 0)
-        {
-            strSQL += " AND Category LIKE @Category";
-            comm.Parameters.AddWithValue("@Category", "%" + strCategory + "%");
-        }
+      
 
 
         //Create DB tools and Configure
-        //*********************************************************************************************
+
         SqlConnection conn = new SqlConnection();
         //Create the who, what where of the DB
         string strConn = @GetConnected();
@@ -230,7 +224,7 @@ public class register
 
         //Get Data
         conn.Open();                //Open the connection 
-        da.Fill(ds, "post_Temp");     //Fill the dataset with results from database and call it "personV2_Temp"
+        da.Fill(ds, "registration_Temp");     //Fill the dataset with results from database and call it "personV2_Temp"
         conn.Close();               //Close the connection 
 
         //Return the data
@@ -250,7 +244,7 @@ public class register
 
         //My SQL command string to pull up one EBook's data
         string sqlString =
-       "SELECT * FROM post WHERE user_ID = @user_ID;";
+       "SELECT * FROM Registration WHERE user_ID = @user_ID;";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;
@@ -272,7 +266,7 @@ public class register
     //Method that will delete one EBook record specified by the ID
     //It will return an Interger meant for feedback on how many 
     // records were deleted
-    public string DeleteOnecemeteryV1(int intcemetery_ID)
+    public string DeleteOnepost(int intuser_ID)
     {
         Int32 intRecords = 0;
         string strResult = "";
@@ -284,9 +278,9 @@ public class register
         //My Connection String
         string strConn = GetConnected();
 
-        //My SQL command string to pull up one EBook's data
+        //My SQL command string to pull up one Registration data
         string sqlString =
-       "DELETE FROM cemeteryV1 WHERE cemetery_ID = @cemetery_ID;";
+       "DELETE FROM Registration WHERE User_ID = @User_ID;";
 
         //Tell the connection object the who, what, where, how
         conn.ConnectionString = strConn;
@@ -294,7 +288,7 @@ public class register
         //Give the command object info it needs
         comm.Connection = conn;
         comm.CommandText = sqlString;
-        comm.Parameters.AddWithValue("@cemetery_ID", intcemetery_ID);
+        comm.Parameters.AddWithValue("@User_ID", intuser_ID);
 
         try
         {
@@ -323,18 +317,13 @@ public class register
 
 
 
-    /// <summary>
-    /// NEW - Method to Update a Record in the DB
-    /// </summary>
-    /// <returns></returns>
     public string UpdateARecord()
     {
         Int32 intRecords = 0;
         string strResult = "";
 
         //Create SQL command string
-        string strSQL = "UPDATE post SET Tname=@Tname, Category=@Category, Description=@Description, Photo=@Photo, Town=@Town, Address=@Address, Zip=@Zip, Fnumber=@Fnumber, Email=@Email  WHERE user_ID = @user_ID;";
-
+        string strSQL = "UPDATE Registration SET Uname=@Uname, Pword=@Pword, Pword2=@Pword2  WHERE user_ID = @user_ID;";
         // Create a connection to DB
         SqlConnection conn = new SqlConnection();
         //Create the who, what where of the DB
@@ -344,18 +333,12 @@ public class register
         // Bark out our command
         SqlCommand comm = new SqlCommand();
         comm.CommandText = strSQL;  //Commander knows what to say
-        comm.Connection = conn;     //Where's the phone?  Here it is
+        comm.Connection = conn;     
 
-        //Fill in the paramters (Has to be created in same sequence as they are used in SQL Statement)
-        comm.Parameters.AddWithValue("@Tname", Tname);
-        comm.Parameters.AddWithValue("@Category", Category);
-        comm.Parameters.AddWithValue("@Description", Description);
-        //comm.Parameters.AddWithValue("@Photo", Photo);
-        comm.Parameters.AddWithValue("@Town", Town);
-        comm.Parameters.AddWithValue("@Address", Address);
-        comm.Parameters.AddWithValue("@Zip", Zip);
-        comm.Parameters.AddWithValue("@Fnumber", Fnumber);
-        comm.Parameters.AddWithValue("@Email", Email);
+        comm.Parameters.AddWithValue("@Uname", Uname);
+        comm.Parameters.AddWithValue("@Pword", Pword);
+        comm.Parameters.AddWithValue("@Pword2", Pword2);
+        comm.Parameters.AddWithValue("@user_ID", user_ID);
         try
         {
             //Open the connection
@@ -379,9 +362,6 @@ public class register
 
     }
 
-
-
-    */
 
 
     private string GetConnected()

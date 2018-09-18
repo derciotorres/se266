@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
 using System.Data.SqlClient;
-using System.Drawing;
-public partial class Default2 : System.Web.UI.Page
+
+public partial class Controls_Form2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         if (Session["LoggedIn"] != null && Session["LoggedIn"].ToString() == "TRUE")
         {
             //do nothing...they are good
@@ -28,31 +28,30 @@ public partial class Default2 : System.Web.UI.Page
         {
             //If so...Gather Person's ID and Fill Form
             strPer_ID = Request.QueryString["Per_ID"].ToString();
-            //lblPerson_ID.Text = strPer_ID;
+            lbluser_ID.Text = strPer_ID;
 
             intPer_ID = Convert.ToInt32(strPer_ID);
 
             //Fill the "temp" person's info based on ID
             post temp = new post();
 
-            SqlDataReader reader = temp.FindOnepost(intPer_ID);
-            reader.Read();
-           String path = Server.MapPath("~/img/");
-             fileuploadimages.PostedFile.SaveAs(path + fileuploadimages.FileName); 
-          
-            while (reader.Read())
+            SqlDataReader dr = temp.FindOnepost(intPer_ID);
+            String path = Server.MapPath("~/img/");
+            //fileuploadimages.PostedFile.SaveAs(path + fileuploadimages.FileName);
+
+            while (dr.Read())
             {
 
-             
-            txtTname.Text = reader["Tname"].ToString();
-            txtCategory.Text = reader["Category"].ToString();
-            txtDescription.Text = reader["Description"].ToString();
-            txtTown.Text = reader["Description"].ToString();
-            txtAddress.Text = reader["Description"].ToString();
-            txtZip.Text = reader["Description"].ToString();
-            txtFnumber.Text = reader["Description"].ToString();
-            txtEmail.Text = reader["Description"].ToString();
-            //fileuploadimages. = reader["photo"].ToString();
+
+                txtTname.Text = dr["Tname"].ToString();
+                txtCategory.Text = dr["Category"].ToString();
+                txtDescription.Text = dr["Description"].ToString();
+                txtTown.Text = dr["Town"].ToString();
+                txtAddress.Text = dr["Address"].ToString();
+                txtZip.Text = dr["Zip"].ToString();
+                txtFnumber.Text = dr["Fnumber"].ToString();
+                txtEmail.Text = dr["Email"].ToString();
+                temp.Photo = dr["photo"].ToString();
 
 
             }
@@ -82,8 +81,10 @@ public partial class Default2 : System.Web.UI.Page
         temp.Fnumber = txtFnumber.Text;
         temp.Email = txtEmail.Text;
         temp.Photo = fileuploadimages.FileName;
-
         temp.User_ID = Convert.ToInt32(lbluser_ID.Text);
+        
+
+     
 
 
         //**************************************************************************

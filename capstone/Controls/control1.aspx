@@ -5,8 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <center>
-    &nbsp;
-    <asp:Button ID="btnAdd" runat="server" Text="Add" Height="57px" OnClick="btnAdd_Click" Width="187px" />
+        <asp:Button ID="btnuser" runat="server" Text="Searchuser" Height="57px" Width="187px" OnClick="btnuser_Click" />
     &nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnSearch" runat="server" Text="Search" Height="57px" Width="187px" OnClick="btnSearch_Click" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

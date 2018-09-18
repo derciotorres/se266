@@ -17,14 +17,14 @@
 
 </head>
 
-<body style="background: #ecf3ff";>
+    <body style="background: #ecf3ff";>
        <form id="form1" runat="server">
 
     <div class="wrapper">
 
         <div class="header">
 
-            <a href="Default.aspx" id="BtnSave" runat="server">
+            <a href="Default.aspx" id="BtnSave" class="BtnSave2" runat="server">
                 <img src="img/takeitaway.png" /></a>
             <div class="lbluser">
                
@@ -32,16 +32,16 @@
             </div>
 
           
-            
+            <!-- buttons -->
             <p class="btnlocation">
                 
                 <a id="btnlog" class="macacada" style=" margin-right: 5px;" data-toggle="modal" data-target="#popUpWindow" runat="server">Login</a>
                 <a href="Register.aspx" id="btnsign" class="macacada" style=" margin-right: 5px;" runat="server">Sign Up</a>
                 <a href="Form.aspx" id="btndonate" class="macacada" style=" margin-right: 5px;" runat="server">Donate</a>
-                <a href="AboutUs.aspx" id="btnabout" class="macacada" runat="server">About us</a>
-                <asp:Button ID="btnLogout" Class=" macacada" runat="server" Text="Log Out" style="background-color: #ecf3ff;"   onclick="btnLogout_Click" />
+                <a href="AboutUs.aspx" id="btnabout" class="macacada" runat="server" >About us</a>
+                <asp:Button ID="btnLogout"  runat="server" Text="Log Out" onclick="btnLogout_Click" />
                 <asp:TextBox ID="txtsearch" runat="server" MaxLength="30" style="border: 2px solid #33ccff;" onclick="btnSearch_Click" />
-                <asp:Button ID="Search" CssClass="macacada" runat="server" Text="Search" style="background-color: #ecf3ff;"  onclick="btnSearch_Click" />
+                <asp:Button ID="Search"  runat="server" Text="Search" onclick="btnSearch_Click" />
                   </p>
           
 

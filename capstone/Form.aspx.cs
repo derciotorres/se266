@@ -11,7 +11,7 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //if the user in not logged in will not be able to get into this page
 
         if (Session["LoggedIn"] != null && Session["LoggedIn"].ToString() == "TRUE")
         {
@@ -33,7 +33,7 @@ public partial class Default2 : System.Web.UI.Page
     {
 
 
-            post temp = new post();
+        post temp = new post();
         String path = Server.MapPath("~/img/");
         fileuploadimages.PostedFile.SaveAs(path + fileuploadimages.FileName);
        

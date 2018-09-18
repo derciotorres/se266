@@ -14,7 +14,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnInsert_Click(object sender, EventArgs e)
     {
-        if (Page.IsValid)
+      /*  if (Page.IsValid)
         {
             btnInsert.AlternateText = "Valid";
         }
@@ -23,7 +23,7 @@ public partial class Default2 : System.Web.UI.Page
             btnInsert.AlternateText = "Invalid!";
         }
 
-
+    */
         register temp = new register();
 
  
